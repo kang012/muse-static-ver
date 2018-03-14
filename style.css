@@ -1,0 +1,156 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* z-index: 100; Behind the navbar */
+  padding: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  /* top: 48px; Height of navbar */
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  /* overflow-x: hidden; */
+  /* overflow-y: auto; Scrollable contents if viewport is shorter than content. */
+}
+
+.navbar-group {
+  border-top: 1px solid hsla(0, 0%, 100%, 0.25);
+  padding-bottom: 5px;
+  padding-top: 10px;
+  text-align: left;
+  /* margin: 20px */
+}
+
+.navbar-group h2 {
+  font-size: 12px;
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+.nav-title {
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+#username {
+  font-size: 14px;
+}
+.type{
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: .015em;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  padding-top: 1px;
+  display: block;
+  color: hsla(0,0%,100%,.6);
+}
+body {
+  background: #34e89e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #0f3443, #34e89e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #0f3443, #34e89e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+  color: white;
+}
+.card {
+  background: none;
+  border: none;
+}
+.card a{
+  text-decoration: none;
+}
+.card image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.mini-album .card-body{
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.card :hover img{
+  opacity: 0.8;
+}
+.card :hover .middle{
+  opacity: 1;
+}
+.card a {
+  color: white;
+}
+.card img{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.nav a {
+  color: hsla(0, 0%, 100%, 0.6);
+  text-decoration: none;
+}
+.nav-link a:hover{
+  text-decoration: mediumseagreen;
+}
+.middle{
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.card-deck .middle{
+  font-size: 12vh;
+}
+.card-deck .middle :hover{
+  font-size: 13vh;
+}
+.hrtemp{
+  content: "";
+  height: 2px;
+  background-color: #1db954;
+  width: 30px;
+  position: relative;
+  top: 4px;
+  display: block;
+  margin: 0 auto;
+}
+.content-spacing{
+  padding: 0 2em;
+  margin: 0 auto;
+  max-width: 1480px;
+}
+.media-name{
+  color:hsla(0,0%,100%,.6)
+}
+/* Album page */
+.card .card-album-title{
+  width: 63vh;
+}
+.card-cover{
+  width: 320px;
+  position: relative;
+}
+.card-cover .middle{
+  font-size: 100px;
+}
+.card-cover .middle:hover{
+  font-size: 105px;
+}
+.card-entity{
+  max-width: 420px;
+}
+.track-list{
+  
+}
