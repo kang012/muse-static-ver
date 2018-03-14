@@ -136,7 +136,7 @@ body {
 }
 /* Album page */
 .card .card-album-title{
-  width: 63vh;
+  width: auto;
 }
 .card-cover{
   width: 320px;
