@@ -151,6 +151,13 @@ body {
 .card-entity{
   max-width: 420px;
 }
-.track-list{
-  
+.tracklist-item{
+  padding: 4vh 12vh 5vh 2vh;
+}
+.tracklist-item:hover{
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.tracklist-item .name{
+  padding-right: 16vh;
 }
