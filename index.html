@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
+    <script src="./scripts.js"></script>
 </head>
 
 <body>
@@ -319,7 +320,7 @@
     </div>
     <div class="nowplayingbar">
         <footer class="nowplayingbar-container">
-            <div class="now-playing-bar">
+            <div class="now-playing-bar d-flex">
                 <div class="nowplayingbar-left">
                     <div class="nowplaying d-flex">
                         <a id="username" href="#">
@@ -335,27 +336,27 @@
                 </div>
                 <div class="nowplayingbar-middle d-flex flex-column">
                     <div class="player-control-buttons d-flex">
-                        <div class="player-control d-flex">
+                        <div class="player-control">
                             <button class="control-button">
                                 <i class="fas fa-random"></i>
                             </button>
                         </div>
-                        <div class="player-control d-flex">
+                        <div class="player-control">
                             <button class="control-button player-control-nav">
                                 <i class="fas fa-fast-backward"></i>
                             </button>
                         </div>
-                        <div class="player-control  d-flex">
-                            <button class="control-button player-control-play">
+                        <div class="player-control">
+                            <button onclick="togglePause()" class="control-button player-control-play">
                                 <i class="far fa-play-circle"></i>
                             </button>
                         </div>
-                        <div class="player-control d-flex">
+                        <div class="player-control">
                             <button class="control-button player-control-nav">
                                 <i class="fas fa-fast-forward"></i>
                             </button>
                         </div>
-                        <div class="player-control d-flex">
+                        <div class="player-control">
                             <button class="control-button">
                                 <i class="fas fa-fast-forward"></i>
                             </button>
@@ -363,21 +364,37 @@
                     </div>
                     <div class="player-control-playback mt-3 d-flex justify-content-between">
                         <div class="playback-bar-time">0:00</div>
-                        <div class="d-block w-100" style="padding-top:0.35rem;" >
+                        <div class="d-block w-100" style="padding-top:0.35rem;">
                             <div class="progress" style="height:4px;">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="playback-bar-time end">3:00</div>
                     </div>
                 </div>
-                <div class="nowplayingbar-right d-flex">
-                    <div class="player-control d-flex">
-                        <button class="control-button">
-                            <i class="fas fa-list"></i>
-                        </button>
+                <div class="nowplayingbar-right">
+                    <div class="player-extras-button d-flex justify-content-between">
+                        <div class="player-control">
+                            <button class="control-button">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                        <div class="volume-bar d-flex justify-content-between">
+                            <button class="control-button">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                            <!-- THIS SHJT NOT WORKKING  -->
+                            <div class="d-block w-100">
+                                <div class="progress" style="height:4px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <audio id="player" controls="controls" >
+                        <source src="./music.mp3">
+                    </audio>
             </div>
         </footer>
     </div>
@@ -409,5 +426,9 @@
         -Collection
             -Albums
             -Songs
-
+    Issues:
+        -vollume bar not appear
+        -body not stretch all page
+        -play icon in album not reduce size when viewport reduce size
+        -player is notworking
  -->
