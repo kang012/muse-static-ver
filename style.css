@@ -202,14 +202,32 @@ body {
   text-transform: none;
   font-family: spotify-circular,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
 }
+.player-control .player-control-play{
+  font-size: 30px;
+}
+.player-control .player-control-nav{
+  font-size: 25px;
+}
+
 .control-button {
   background-color: transparent;
   border: none;
   color: hsla(0, 0%, 100%, 0.6);
   width: 32px;
-  min-width: 32px;
+  min-width: 55px;
   height: 32px;
   position: relative;
+}
+
+.control-button:hover{
+  color: white;
+}
+.playback-bar-time{
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: .015em;
+  min-width: 40px;
+  text-align: center;
 }
 .nowplayingbar-container {
   min-width: 620px;

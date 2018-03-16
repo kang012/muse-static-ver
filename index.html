@@ -333,38 +333,53 @@
                         </div>
                     </div>
                 </div>
-                <div class="nowplayingbar-middle d-flex">
-                    <div class="player-control d-flex">
-                        <button class="control-button">
-                            <i class="fas fa-random"></i>
-                        </button>
+                <div class="nowplayingbar-middle d-flex flex-column">
+                    <div class="player-control-buttons d-flex">
+                        <div class="player-control d-flex">
+                            <button class="control-button">
+                                <i class="fas fa-random"></i>
+                            </button>
+                        </div>
+                        <div class="player-control d-flex">
+                            <button class="control-button player-control-nav">
+                                <i class="fas fa-fast-backward"></i>
+                            </button>
+                        </div>
+                        <div class="player-control  d-flex">
+                            <button class="control-button player-control-play">
+                                <i class="far fa-play-circle"></i>
+                            </button>
+                        </div>
+                        <div class="player-control d-flex">
+                            <button class="control-button player-control-nav">
+                                <i class="fas fa-fast-forward"></i>
+                            </button>
+                        </div>
+                        <div class="player-control d-flex">
+                            <button class="control-button">
+                                <i class="fas fa-fast-forward"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="player-control d-flex">
-                        <button class="control-button">
-                            <i class="fas fa-fast-backward"></i>
-                        </button>
+                    <div class="player-control-playback mt-3 d-flex justify-content-between">
+                        <div class="playback-bar-time">0:00</div>
+                        <div class="d-block w-100" style="padding-top:0.35rem;" >
+                            <div class="progress" style="height:4px;">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="playback-bar-time end">3:00</div>
                     </div>
+                </div>
+                <div class="nowplayingbar-right d-flex">
                     <div class="player-control d-flex">
                         <button class="control-button">
-                            <i class="far fa-play-circle"></i>
-                        </button>
-                    </div>
-                    <div class="player-control d-flex">
-                        <button class="control-button">
-                            <i class="fas fa-fast-forward"></i>
-                        </button>
-                    </div>
-                    <div class="player-control d-flex">
-                        <button class="control-button">
-                            <i class="fas fa-fast-forward"></i>
+                            <i class="fas fa-list"></i>
                         </button>
                     </div>
                 </div>
-                <div class="nowplayingbar-right d-flex"></div>
             </div>
-
         </footer>
-
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
