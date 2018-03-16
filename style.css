@@ -39,28 +39,36 @@
 #username {
   font-size: 14px;
 }
-.type{
+.type {
   font-size: 11px;
   line-height: 16px;
-  letter-spacing: .015em;
+  letter-spacing: 0.015em;
   font-weight: 200;
   text-transform: uppercase;
-  letter-spacing: .16em;
+  letter-spacing: 0.16em;
   padding-top: 1px;
   display: block;
-  color: hsla(0,0%,100%,.6);
+  color: hsla(0, 0%, 100%, 0.6);
 }
 body {
-  background: #34e89e;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #0f3443, #34e89e);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #0f3443, #34e89e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+  background: #34e89e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #0f3443,
+    #34e89e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #0f3443,
+    #34e89e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
 }
 .card {
   background: none;
   border: none;
 }
-.card a{
+.card a {
   text-decoration: none;
 }
 .card image {
@@ -68,11 +76,11 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  transition: .5s ease;
+  transition: 0.5s ease;
   backface-visibility: hidden;
 }
-.mini-album .card-body{
-  transition: .5s ease;
+.mini-album .card-body {
+  transition: 0.5s ease;
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -81,27 +89,27 @@ body {
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
-.card :hover img{
+.card :hover img {
   opacity: 0.8;
 }
-.card :hover .middle{
+.card :hover .middle {
   opacity: 1;
 }
 .card a {
   color: white;
 }
-.card img{
+.card img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .nav a {
   color: hsla(0, 0%, 100%, 0.6);
   text-decoration: none;
 }
-.nav-link a:hover{
+.nav-link a:hover {
   text-decoration: mediumseagreen;
 }
-.middle{
-  transition: .5s ease;
+.middle {
+  transition: 0.5s ease;
   opacity: 0;
   position: absolute;
   top: 40%;
@@ -110,13 +118,13 @@ body {
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
-.card-deck .middle{
+.card-deck .middle {
   font-size: 12vh;
 }
-.card-deck .middle :hover{
+.card-deck .middle :hover {
   font-size: 13vh;
 }
-.hrtemp{
+.hrtemp {
   content: "";
   height: 2px;
   background-color: #1db954;
@@ -126,38 +134,106 @@ body {
   display: block;
   margin: 0 auto;
 }
-.content-spacing{
+.content-spacing {
   padding: 0 2em;
   margin: 0 auto;
   max-width: 1480px;
 }
-.media-name{
-  color:hsla(0,0%,100%,.6)
+.media-name {
+  color: hsla(0, 0%, 100%, 0.6);
 }
 /* Album page */
-.card .card-album-title{
+.card .card-album-title {
   width: auto;
 }
-.card-cover{
+.card-cover {
   width: 320px;
   position: relative;
 }
-.card-cover .middle{
+.card-cover .middle {
   font-size: 100px;
 }
-.card-cover .middle:hover{
+.card-cover .middle:hover {
   font-size: 105px;
 }
-.card-entity{
+.card-entity {
   max-width: 420px;
 }
-.tracklist-item{
+.tracklist-item {
   padding: 4vh 12vh 5vh 2vh;
 }
-.tracklist-item:hover{
+.tracklist-item:hover {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.tracklist-item .name{
+.tracklist-item .name {
   padding-right: 16vh;
+}
+.nowplayingbar {
+  background-color: #181818;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 101;
+}
+.nowplayingbar-left {
+  width: 30%;
+  min-width: 180px;
+}
+.just-spacing {
+  margin-bottom: 20vh;
+}
+.player-control {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.player-control button{
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: .015em;
+  font-weight: 200;
+  color: hsla(0,0%,100%,.6);
+  text-transform: none;
+  font-family: spotify-circular,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
+}
+.control-button {
+  background-color: transparent;
+  border: none;
+  color: hsla(0, 0%, 100%, 0.6);
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  position: relative;
+}
+.nowplayingbar-container {
+  min-width: 620px;
+  background-color: #282828;
+  border-top: 1px solid #000;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.now-playing-bar {
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 90px;
+  padding: 0 16px;
 }
