@@ -264,3 +264,25 @@ button:focus {
   height: 90px;
   padding: 0 16px;
 }
+
+.slider {
+    transition-property: transform;
+    transition-duration: .1s;
+    transition-timing-function: cubic-bezier(1,0,.7,1);
+    background-color: green;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    margin-top: -6px;
+    z-index: 100;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+    transform: scale(0);
+}
+.main-progress:hover .slider {
+    transition-property: transform;
+    transition-duration: .1s;
+    transition-timing-function: cubic-bezier(1,0,.7,1);
+    background-color:red;
+    transform: scale(1);
+}
