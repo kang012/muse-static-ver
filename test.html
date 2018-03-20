@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 
 <head>
     <title>Title</title>
@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <h1>TESTING AUDIO PLAYER</h1>
     <div class="nowplayingbar">
         <footer class="nowplayingbar-container">
             <div class="now-playing-bar d-flex">
@@ -45,7 +46,7 @@
                             </button>
                         </div>
                         <div class="player-control">
-                            <audio id="player" controls="controls" onended="togglePlayPause()" onplaying="trackingPlayer()">
+                            <audio id="player" controls="controls" onended="togglePlayPause()">
                                 <source src="./music.mp3">
                             </audio>
                             <button onclick="togglePlayPause()" class="control-button player-control-play">
