@@ -1,5 +1,5 @@
+var myAudio = document.getElementById("player");
 function togglePlayPause() {
-  var myAudio = document.getElementById("player");
   var playButton = document.getElementById("play-button");
   var sliderStart;
   if (myAudio.paused) {
@@ -57,3 +57,21 @@ function updateProgress(isPaused) {
     clearInterval(startTracking);
   }
 }
+
+var percentLoaded = document.getElementById("percent-loaded");
+
+percentLoaded.addEventListener("click", function(event) {
+  var newWidth = event.clientX - event.target.getBoundingClientRect().left;
+
+  var progressBar = document.getElementById("audio-progress");
+  var pin = document.getElementById("audio-slider");
+  var percentNum = ((newWidth * 100) / percentLoaded.offsetWidth);
+  var percent = percentNum + "%";
+  var audioTime = (percentNum * myAudio.duration)/100;
+
+  progressBar.style.width = percent;
+  pin.style.left = percent;
+
+  myAudio.currentTime = audioTime;
+
+});
