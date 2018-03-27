@@ -57,7 +57,7 @@ percentLoaded.addEventListener("click", function(event) {
   mouseMovePin(event);
 });
 
-function updateProgress(percent) {
+function updateProgressT(percent) {
   var audioTime = percent * myAudio.duration / 100;
   console.log("audio time: " + audioTime);
 
@@ -76,7 +76,7 @@ function mouseDown(event) {
 }
 function mouseUp() {
   if (onPin == true) {
-    updateProgress(percent);
+    updateProgressT(percent);
     window.removeEventListener("mousemove", mouseMovePin);
     console.log("mousemove removed");
   }
