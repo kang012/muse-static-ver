@@ -348,11 +348,11 @@
               </button>
             </div>
             <div class="player-control">
-              <audio id="player" controls="controls" onended="togglePlayPause()">
+              <audio id="player" >  <!-- onended="togglePlayPause()" -->
                 <source src="./audio/music.mp3">
               </audio>
-              <button onclick="togglePlayPause()" class="control-button player-control-play">
-                <i id="play-button" class="far fa-play-circle"></i>
+              <button id="play-button" class="control-button player-control-play"> <!-- onclick="togglePlayPause()" -->
+                <i id="play-icon" class="far fa-play-circle"></i>
               </button>
             </div>
             <div class="player-control">
