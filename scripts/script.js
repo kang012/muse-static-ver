@@ -3,7 +3,8 @@ var playButton = document.getElementById("play-button");
 var progressBar = document.getElementById("audio-progress");
 var percentLoaded = document.getElementById("percent-loaded");
 var pin = document.getElementById("audio-slider");
-
+var playbackTime = document.getElementById("playbackTime");
+var duration = document.getElementById("songDuration");
 var percent;
 function togglePlayPause() {
   var playIcon = document.getElementById("play-icon");
@@ -11,24 +12,35 @@ function togglePlayPause() {
     if (myAudio.ended) {
       playIcon.classList.remove("far", "fa-pause-circle");
       playIcon.classList.add("far", "fa-play-circle");
-      console.log(myAudio.ended);
+      myAudio.currentTime = 0;
+      progressBar.style.width = "0%";
+      pin.style.left = "0%";
+      // console.log(myAudio.ended);
       updateProgress(myAudio.paused);
     } else {
       playIcon.classList.remove("far", "fa-play-circle");
       playIcon.classList.add("far", "fa-pause-circle");
       myAudio.play();
-      console.log("Audio is started");
+      // console.log("Audio is started");
       updateProgress(myAudio.paused);
     }
   } else if (myAudio.play) {
     myAudio.pause();
     playIcon.classList.remove("far", "fa-pause-circle");
     playIcon.classList.add("far", "fa-play-circle");
-    console.log("Audio is stopped");
+    // console.log("Audio is stopped");
     updateProgress(myAudio.paused);
   }
 }
-
+function secondToMin(currentTime) {
+  var sec = Math.floor(currentTime) % 60;
+  var min = Math.round(Math.floor(currentTime) / 60);
+  if (sec < 10) {
+    return min + ":0" + sec;
+  } else {
+    return min + ":" + sec;
+  }
+}
 var startTracking;
 function updateProgress(isPaused) {
   var myAudio = document.getElementById("player");
@@ -36,22 +48,27 @@ function updateProgress(isPaused) {
   var songDuration = myAudio.duration;
   var progressBar = document.getElementById("audio-progress");
   var pin = document.getElementById("audio-slider");
-  console.log("tracking start");
+  // console.log("tracking start");
   if (!isPaused) {
     startTracking = setInterval(function name(params) {
-      currentTime = myAudio.currentTime;
-      percent = currentTime * 100 / songDuration + "%";
-      progressBar.style.width = percent;
-      pin.style.left = percent;
-      
+      if (onPin == false) {
+        currentTime = myAudio.currentTime;
+        percent = currentTime * 100 / songDuration + "%";
+        progressBar.style.width = percent;
+        pin.style.left = percent;
+        playbackTime.innerHTML = secondToMin(myAudio.currentTime);
+        duration.innerHTML = secondToMin(myAudio.duration);
+      } else {
+        clearInterval(startTracking);
+      }
     }, 1000);
   } else {
     clearInterval(startTracking);
   }
 }
 
-playButton.addEventListener("click",togglePlayPause);
-myAudio.addEventListener("ended",togglePlayPause);
+playButton.addEventListener("click", togglePlayPause);
+myAudio.addEventListener("ended", togglePlayPause);
 
 percentLoaded.addEventListener("click", function(event) {
   mouseMovePin(event);
@@ -76,16 +93,19 @@ function mouseDown(event) {
 }
 function mouseUp() {
   if (onPin == true) {
-    updateProgressT(percent);
+    updateProgressT(percent); //update position of pin after mouse released
+    console.log(onPin);
     window.removeEventListener("mousemove", mouseMovePin);
     console.log("mousemove removed");
+    onPin = false;
+    updateProgressT(percent);
   }
   onPin = false;
 }
 function mouseMovePin(event) {
   var newWidth = event.clientX - percentLoaded.getBoundingClientRect().left; // mouse position
   var percentLoadedWidth = percentLoaded.offsetWidth;
-  console.log("mouse position: " + newWidth);
+  // console.log("mouse position: " + newWidth);
 
   if (newWidth > 0 && newWidth < percentLoadedWidth) {
     percent = newWidth * 100 / percentLoadedWidth;
